@@ -1,0 +1,127 @@
+
+
+
+
+
+
+### Fetching all books
+GET http://localhost:3333/books
+
+
+
+
+
+### Fetching books by ISBN
+GET http://localhost:3333/books/isbn/9780316769488
+
+
+
+
+
+
+
+
+
+
+
+
+### Fetching books by title
+GET http://localhost:3333/books/title/The Great Gatsby
+
+
+
+
+
+
+
+
+
+
+### Fetching books by author
+GET http://localhost:3333/books/author/Jane Austen
+
+
+
+
+
+### Fetching books by genre
+GET http://localhost:3333/books/genre/Fiction
+
+
+
+
+
+
+###GETTING REVIEWS FROM A BOOK
+GET http://localhost:3333/reviews/9781503280786
+
+
+
+
+
+
+
+### Post request for registering users 
+POST http://localhost:3333/auth/register
+Content-Type: application/json
+
+{
+  "username": "eve",
+  "password": "123456"
+}
+
+
+
+
+
+
+###LOGGING A USER
+POST http://localhost:3333/auth/login
+Content-Type: application/json
+
+{
+  "username": "eve",
+  "password": "123456"
+}
+
+
+
+
+
+
+
+
+### POSTING A REVIEW FROM A LOGGED USER
+POST http://localhost:3333/reviews
+Content-Type: application/json
+Authorization:  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImV2ZSIsImlhdCI6MTcyMjM0MjU1MiwiZXhwIjoxNzIyMzQ2MTUyfQ.c3NCJXO9bIKEO1SVoMnkO5AoK8qNprq3ot6HwcFmwBU
+
+{
+  "ISBN": "9780743273565",
+  "review":"Me encanta este libro, es el mejor libro del mundo"
+}
+
+
+
+
+###UPDATING A REVIEW FROM A USER
+
+PUT http://localhost:3333/reviews
+Content-Type: application/json
+Authorization:  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImV2ZSIsImlhdCI6MTcyMjM0MjU1MiwiZXhwIjoxNzIyMzQ2MTUyfQ.c3NCJXO9bIKEO1SVoMnkO5AoK8qNprq3ot6HwcFmwBU
+
+{
+  "ISBN": "9780743273565",
+  "review":"Odio este libro, es el peor libro del mundo"
+}
+
+
+###DELETING A REVIEW FROM A USER
+DELETE http://localhost:3333/reviews
+Content-Type: application/json
+Authorization:  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImV2ZSIsImlhdCI6MTcyMjM0MjU1MiwiZXhwIjoxNzIyMzQ2MTUyfQ.c3NCJXO9bIKEO1SVoMnkO5AoK8qNprq3ot6HwcFmwBU
+
+{
+  "ISBN": "9780743273565",
+  "review":"Me encanta este libro, es el mejor libro del mundo"
+}
